@@ -1,0 +1,18 @@
+***************** CONSULTAS PARCIAL LM21009 ************************+
+//creacion de base de datos
+
+CREATE DATABASE db_tienda
+
+//creacion de tabla de proveedor
+
+CREATE TABLE tbl_proveedor(idproveedor SERIAL PRIMARY KEY, nombreproveedor VARCHAR(100));
+
+//creacion de la tabla producto
+
+CREATE TABLE tbl_producto(idproducto SERIAL PRIMARY KEY, nombreproducto VARCHAR(100), PRECIO NUMERIC(10,2),
+						 idproveedor INT, CONSTRAINT 
+				fk_proveedor FOREIGN KEY (idproveedor) REFERENCES 
+				tbl_proveedor(idproveedor));
+
+
+//para la funcionalidad de la base de datos se utilizaron datos de prueba
